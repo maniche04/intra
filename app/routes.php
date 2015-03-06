@@ -17,10 +17,18 @@ Route::get('/', function()
     $firstname = Auth::user()->firstname;
     $users = DB::select("SELECT username FROM users ORDER BY username ASC");
 
-    return View::make('home', array('user'=>$username, 'firstname' => $firstname, 'users' => $users));
+    return View::make('layout/app', array('user'=>$username, 'firstname' => $firstname, 'users' => $users));
     
 
 })->before('auth');
+
+Route::get('home',function(){
+    return View::make('home');
+});
+
+Route::get('todos',function(){
+    echo "TO DO LIST";
+});
 
 
 Route::get('login', array('as' => 'login', function () { 
