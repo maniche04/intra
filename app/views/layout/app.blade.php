@@ -7,6 +7,7 @@
         @yield('pageTitle')
     </title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <?php echo HTML::style( 'dist/semantic.min.css')?>
     <?php echo HTML::script( 'dist/semantic.min.js')?>
     <style>
@@ -38,7 +39,7 @@
             <i class="home icon"></i> Home
         </a>
         <a phpurl = 'todos' class="item" onclick="ajaxLoad('#maincontent', 'todos')">
-            <i class="checkmark box icon"></i> To-Do List
+            <i class="cubes icon"></i> Organizer
         </a>
         <a class="item">
             <i class="spy icon"></i> Self Service
@@ -124,15 +125,18 @@
 
 
     <script>
-    $('.ui.dropdown')
-        .dropdown();
-
-
-    $("#logoutbtn").click(function(e) {
+     $("#logoutbtn").click(function(e) {
         e.preventDefault();
         confirmLogout();
 
     });
+
+    $('.dropdown')
+  .dropdown({
+    // you can use any ui transition
+    transition: 'drop'
+  })
+;
 
 
     $(".close.icon").click(function() {

@@ -27,7 +27,7 @@ Route::get('home',function(){
 });
 
 Route::get('todos',function(){
-    echo "TO DO LIST";
+    return View::make('todo');
 });
 
 
