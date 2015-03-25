@@ -93,14 +93,18 @@
 
 
             <p>{{todo.Description}}</p>
-            <br>
-
-             <div class="mini blue icon ui buttons">
+            <div class="tiny icon ui buttons">
   <div class="ui button"><i class="checkmark icon"></i></div>
   <div class="ui button"><i class="close icon"></i></div>
   <div class="ui button"><i class="share icon"></i></div>
-  
-</div>
+  </div>
+            </div>
+            <div class = "ui bottom attached segment">
+            <a class="ui tag tiny label">IT</a>
+            <a class="ui tag tiny orange label">Canias</a>
+
+             
+
 
         </div>
        
