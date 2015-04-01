@@ -30,6 +30,20 @@ Route::get('todos',function(){
     return View::make('todo');
 });
 
+Route::post('todos/add',function(){
+    $input = Input::all();
+    
+    DB::table('todos')->insert(
+        array('title' => $input['Title'], 'description' => $input['Description'])
+    );
+    echo "Saved!";
+});
+
+Route::get('todos/get',function(){
+    $todos = DB::table('todos')->get();
+    $todosj = json_encode($todos);
+    print_r($todosj);
+});
 
 Route::get('login', array('as' => 'login', function () { 
 	return View::make('auth/login');
