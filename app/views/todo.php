@@ -55,9 +55,13 @@
     <div class="ui left aligned grid">
         <div class="three wide left aligned column">
         
-                    
+              <div class="tiny icon ui blue buttons">
+                        <div class="ui addnew button" ><i class="add icon"></i> New</div>
+                        
+                    </div>      
                
-            <div class="ui vertical blue accordion menu">
+            <div class="ui vertical blue inverted accordion menu">
+                
                 <div class="item">
                     <div class="ui input">
                         <input type="text" placeholder="Search..." ng-model="filtertext" ng-change="todoC.refresh;">
@@ -71,7 +75,7 @@
                 <i class="dropdown icon"></i> Status
             </a>
             <div class="active content">
-                <div class="ui form ">
+                <div class="ui blue inverted form ">
                     <div class="grouped fields">
                         <div class="field">
                             <div class="ui checkbox">
@@ -106,7 +110,7 @@
                 <i class="dropdown icon"></i> Colors
             </a>
             <div class="active content">
-                <div class="ui form ">
+                <div class="ui blue inverted form ">
                     <div class="grouped fields">
                         <div class="field">
                             <div class="ui checkbox">
@@ -148,10 +152,7 @@
             
         </div>
     </div>
-    <div class="tiny icon ui blue buttons">
-                        <div class="ui addnew button" ><i class="checkmark icon"></i></div>
-                        
-                    </div>
+    
     <div class="ui add fluid blue popup">
       <div class="ui form segment">
                 
@@ -165,8 +166,23 @@
                     <textarea placeholder="Description Here" rows="2" type="text" ng-model="todoC.new.Description"></textarea>
                 </div>
                 <div class="field">
+                    <label>Tags</label>
+                    <input class="ui small input" placeholder="Add Tags Here" rows="2" type="text" ng-model="todoC.new.tags">
+                    <br>
+                </div>
+                <div class="field">
+                    <label>Share To</label>
+                    <input class="ui small input" placeholder="Enter Usernames Here" rows="1" type="text">
+                    <br>
+                </div>
+                <div class="field">
                     <label>Status</label>
                     <input class="ui small input" placeholder="Status" rows="1" type="text" ng-model="todoC.new.Status">
+                    <br>
+                </div>
+                <div class="field">
+                    <label>Completion Percentage</label>
+                    <input class="ui small input" placeholder="Completion Percentage" rows="1" type="text" ng-model="todoC.new.completion">
                     <br>
                 </div>
                 <a class="item">
@@ -199,20 +215,13 @@
 
     
 </h4>
-                <div class="ui attached segment">
+                <div class="ui left attached segment">
                     <p>{{todo.description}}</p>
-                    <div class="tiny icon ui buttons">
-                        <div class="ui button"><i class="checkmark icon"></i></div>
-                        <div class="ui button"><i class="close icon"></i></div>
-                        <div class="ui button"><i class="share icon"></i></div>
-                    </div>
+                    
                 </div>
-                <div class="ui bottom attached segment">
-                    <a class="ui tag tiny label">IT</a>
-                    <a class="ui tag tiny orange label">Canias</a>
-                </div>
+                
             </div>
-            <div class="three wide left aligned column" ng-show="todoC.new.title.$dirty" id ="newTask">
+            <div class="two wide left aligned column" ng-show="todoC.new.title.$dirty" id ="newTask">
                 <div class="ui segment">
                     <h4 class="ui blue header">{{todoC.new.title}}</h4>
                     <p>{{todoC.new.description}}</p>

@@ -34,7 +34,7 @@ Route::post('todos/add',function(){
     $input = Input::all();
     
     DB::table('todos')->insert(
-        array('title' => $input['Title'], 'description' => $input['Description'])
+        array('title' => $input['Title'], 'description' => $input['Description'], 'completion'=> $input['completion'])
     );
     echo "Saved!";
 });
