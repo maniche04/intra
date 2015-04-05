@@ -194,20 +194,20 @@
 
     </div>
     <div class="twelve wide left aligned column">
-        <div class="ui large breadcrumb">
-            <a class="section">Home</a>
-            <i class="right chevron icon divider"></i>
-            <a class="section">Registration</a>
-            <i class="right chevron icon divider"></i>
-            <div class="active section">Personal Information</div>
-        </div>
+        
         <br>
         <div class="ui grid">
-            <div id = "todolists" class="five wide left aligned column" ng-repeat="todo in todoC.todos | filter: filtertext">
-                <h4 class="ui blue top attached header">
-<div class="ui top attached indicating large progress" ng-attr-data-percent="{{todo.completion}}">
+            <div class="ui five wide left aligned column" ng-repeat="todo in todoC.todos | filter: filtertext">
+            
+                
+                <h4 class="ui todotask blue top attached header">
+                <a class="ui blue right corner label">
+    <i class="close icon"></i>
+  </a>
+  <div class="ui top attached indicating large progress" ng-attr-data-percent="{{todo.completion}}">
       <div class="bar"></div>
     </div>
+
     <br> 
   {{todo.title}}
 
@@ -215,20 +215,29 @@
 
     
 </h4>
+<div class="ui small popup">
+                    <div class="small icon ui green buttons">
+                        <div class="ui small addnew button" ><i class="add icon"></i></div>
+                        
+                    </div>  
+                </div>
                 <div class="ui left attached segment">
                     <p>{{todo.description}}</p>
                     
                 </div>
+              
                 
             </div>
+            
+            
             <div class="two wide left aligned column" ng-show="todoC.new.title.$dirty" id ="newTask">
                 <div class="ui segment">
                     <h4 class="ui blue header">{{todoC.new.title}}</h4>
                     <p>{{todoC.new.description}}</p>
                 </div>
             </div>
+
             
-        </div>
     </div>
     </div>
 
@@ -263,5 +272,17 @@ $('.addnew.button')
     on    : 'click'
   })
 ;
+
+$('.todotask').popup({
+    inline   : true,
+    hoverable: true,
+    position : 'bottom left',
+    delay: {
+      show: 300,
+      hide: 800
+    }
+  });
+
+
 </script>
 </body>
